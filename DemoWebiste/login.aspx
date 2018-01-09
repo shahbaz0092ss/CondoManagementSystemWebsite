@@ -37,7 +37,7 @@
       
       <li class="nav-item">
 
-         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/signup.aspx"><span  class="btn btn-info my-2 my-sm-0" >Register</span></asp:HyperLink>
+         <%--<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/signup.aspx"><span  class="btn btn-info my-2 my-sm-0" >Register</span></asp:HyperLink>--%>
       </li>
        </ul>
 

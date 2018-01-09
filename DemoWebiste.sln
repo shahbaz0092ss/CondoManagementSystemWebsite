@@ -3,25 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DemoWebiste", "G:\vmm\DemoWebiste\", "{B74E22C5-8E46-4726-AF22-C71487C39FE1}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DemoWebiste", "DemoWebiste\", "{8F769D38-3A9A-4771-BA46-D6C60B3EFF45}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50019"
-		Debug.AspNetCompiler.PhysicalPath = "G:\vmm\DemoWebiste\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50019\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54721"
+		Debug.AspNetCompiler.PhysicalPath = "..\CondoManagementSystemWebsite\DemoWebiste\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54721\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50019"
-		Release.AspNetCompiler.PhysicalPath = "G:\vmm\DemoWebiste\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50019\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54721"
+		Release.AspNetCompiler.PhysicalPath = "..\CondoManagementSystemWebsite\DemoWebiste\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54721\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50019"
-		SlnRelativePath = "G:\vmm\DemoWebiste\"
+		VWDPort = "54721"
 	EndProjectSection
 EndProject
 Global
@@ -29,13 +28,13 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B74E22C5-8E46-4726-AF22-C71487C39FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B74E22C5-8E46-4726-AF22-C71487C39FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F769D38-3A9A-4771-BA46-D6C60B3EFF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F769D38-3A9A-4771-BA46-D6C60B3EFF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7E0242C1-4583-49E3-9A3A-8144D471A36F}
+		SolutionGuid = {D676ABAC-3F41-42CC-98CF-888DDB843250}
 	EndGlobalSection
 EndGlobal
