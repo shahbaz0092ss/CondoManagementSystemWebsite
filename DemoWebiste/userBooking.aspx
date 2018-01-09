@@ -63,26 +63,32 @@
             <asp:Button ID="btnsubmit" runat="server" Text="Book Now" CssClass="btn btn-primary" OnClick="btnsubmit_Click" />
         </div>
         <div class="container mt-5 mb-5">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#EAE5E5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#EAE5E5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound">
                 <Columns>
-                    <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
-                    <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
-                    <asp:BoundField DataField="timefrom" HeaderText="timefrom" SortExpression="timefrom" />
-                    <asp:BoundField DataField="timeto" HeaderText="timeto" SortExpression="timeto" />
-                    <asp:BoundField DataField="bookingdetail" HeaderText="bookingdetail" SortExpression="bookingdetail" />
+                    <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
+                    <asp:BoundField DataField="apartmentNumber" HeaderText="Apartment #" SortExpression="apartmentNumber" />
+                    <asp:BoundField DataField="userEmail" HeaderText="User Email" SortExpression="userEmail" />
+                    <asp:BoundField DataField="category" HeaderText="Category" SortExpression="category" />
+                    <asp:BoundField DataField="date" HeaderText="Date" SortExpression="date" />
+                    <asp:BoundField DataField="timefrom" HeaderText="Time From" SortExpression="timefrom" />
+                    <asp:BoundField DataField="timeto" HeaderText="Time To" SortExpression="timeto" />
+                    <asp:BoundField DataField="bookingdetail" HeaderText="Bookingdetail" SortExpression="bookingdetail" />
+                    <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
+                    <asp:TemplateField HeaderText="StatusTry" ItemStyle-Width="150">
+                        <ItemTemplate>
+                            <asp:DropDownList ID="ddStatus" runat="server" ></asp:DropDownList>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <HeaderStyle CssClass="thead-dark" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemoConnectionString %>" SelectCommand="SELECT [bookingdetail], [timeto], [timefrom], [date], [category] FROM [booking] WHERE ([username] = @username)">
-                <SelectParameters>
-                    <asp:SessionParameter Name="username" SessionField="username" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemoConnectionString %>" SelectCommand="SELECT * FROM [booking]"></asp:SqlDataSource>
         </div>
+
     </div>
 
 
-    
+
 
 </asp:Content>
 

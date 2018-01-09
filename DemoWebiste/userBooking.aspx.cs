@@ -41,6 +41,8 @@ public partial class userBooking : System.Web.UI.Page
                     adp.Fill(dt);
                     
                 }
+
+
             }
 
         }
@@ -69,10 +71,12 @@ public partial class userBooking : System.Web.UI.Page
             };
 
             SelectAdp.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
 
             SqlCommand InsertCmd = new SqlCommand
             {
-                CommandText = "INSERT INTO [booking] ([username], [apartmentNumber], [userEmail], [category], [date], [timeFrom], [timeTo], [bookingDetail]) VALUES (@fullname, @apartmentNumber, @emailid, @category, @date, @timeFrom, @timeTo, @bookingDetail)",
+                CommandText = "INSERT INTO [booking] ([username], [apartmentNumber], [userEmail], [category], [date], [timeFrom], [timeTo], [bookingDetail], [status]) VALUES (@fullname, @apartmentNumber, @emailid, @category, @date, @timeFrom, @timeTo, @bookingDetail, @status)",
                 Connection = conn
             };
 
@@ -84,6 +88,8 @@ public partial class userBooking : System.Web.UI.Page
             InsertCmd.Parameters.AddWithValue("@timeFrom", timeFrom.Value);
             InsertCmd.Parameters.AddWithValue("@timeTo", timeTo.Value);
             InsertCmd.Parameters.AddWithValue("@bookingDetail", bookingDetail.Value.ToString());
+            InsertCmd.Parameters.AddWithValue("@status", "PENDING");
+
             if (conn.State != ConnectionState.Open)
             {
                 conn.Open();
@@ -101,6 +107,21 @@ public partial class userBooking : System.Web.UI.Page
 
             Response.Redirect("userBooking.aspx");
             
+        }
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        SqlConnection conn = new SqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["DemoConnectionString"].ConnectionString;
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+
         }
     }
 }

@@ -16,7 +16,7 @@
     <form id="form1" runat="server">
     <div class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div style="float:right;">
-        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-outline-info btn-sm" NavigateUrl="~/signup.aspx">Signup</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-outline-info btn-sm" NavigateUrl="~/signup.aspx">Reister</asp:HyperLink>
         <asp:HyperLink ID="HyperLink2" runat="server" CssClass="btn btn-outline-info btn-sm" NavigateUrl="~/login.aspx">Login</asp:HyperLink>
         <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-outline-info btn-sm" NavigateUrl="~/recoverpassword.aspx">Recover Password</asp:HyperLink>
         </div>
