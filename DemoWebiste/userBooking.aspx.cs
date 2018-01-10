@@ -71,8 +71,7 @@ public partial class userBooking : System.Web.UI.Page
             };
 
             SelectAdp.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+           
 
             SqlCommand InsertCmd = new SqlCommand
             {
@@ -117,11 +116,63 @@ public partial class userBooking : System.Web.UI.Page
 
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
+        //SqlConnection conn = new SqlConnection();
+        //conn.ConnectionString = ConfigurationManager.ConnectionStrings["DemoConnectionString"].ConnectionString;
+
+        //SqlCommand cmd = new SqlCommand();
+
+        //cmd.CommandText = "SELECT * FROM booking";
+        //    cmd.Connection = conn;
+        
+        //DataTable dt = new DataTable();
+
+        //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+        //adp.Fill(dt);
+
+
+        //if (dt.Rows.Count > 0)
+        //{
+        //    ddl
+        //    adp.Fill(dt);
+
+        //}
+
+
+    }
+
+    protected void BtnUpdate_Click(object sender, EventArgs e)
+    {
         SqlConnection conn = new SqlConnection();
         conn.ConnectionString = ConfigurationManager.ConnectionStrings["DemoConnectionString"].ConnectionString;
-        if (e.Row.RowType == DataControlRowType.DataRow)
+
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "INSERT INTO [status]) VALUES (@status)";
+        cmd.Connection = conn;
+        foreach(GridViewRow g1 in GridView1.Rows)
         {
+            string status = (g1.FindControl("txtStatus") as TextBox).Text;
+            cmd.Parameters.AddWithValue("@status", status);
 
         }
+
+
+
+        if (conn.State == ConnectionState.Closed)
+        {
+            conn.Open();
+        }
+
+        try
+        {
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            //Label1.Text = "Profile Updated";
+        }
+        catch (Exception)
+        {
+            conn.Close();
+        }
+
     }
 }

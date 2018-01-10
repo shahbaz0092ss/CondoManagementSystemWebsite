@@ -63,7 +63,7 @@
             <asp:Button ID="btnsubmit" runat="server" Text="Book Now" CssClass="btn btn-primary" OnClick="btnsubmit_Click" />
         </div>
         <div class="container mt-5 mb-5">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#EAE5E5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#EAE5E5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%" >
                 <Columns>
                     <asp:BoundField DataField="username" HeaderText="Username" SortExpression="username" />
                     <asp:BoundField DataField="apartmentNumber" HeaderText="Apartment #" SortExpression="apartmentNumber" />
@@ -73,18 +73,19 @@
                     <asp:BoundField DataField="timefrom" HeaderText="Time From" SortExpression="timefrom" />
                     <asp:BoundField DataField="timeto" HeaderText="Time To" SortExpression="timeto" />
                     <asp:BoundField DataField="bookingdetail" HeaderText="Bookingdetail" SortExpression="bookingdetail" />
-                    <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
-                    <asp:TemplateField HeaderText="StatusTry" ItemStyle-Width="150">
-                        <ItemTemplate>
-                            <asp:DropDownList ID="ddStatus" runat="server" ></asp:DropDownList>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <%--<asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />--%>
+                   <asp:TemplateField HeaderText="status" ItemStyle-Width="150">
+            <ItemTemplate>
+                <asp:TextBox ID="txtStatus" runat="server" Text='<%# Eval("status") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
                 </Columns>
                 <HeaderStyle CssClass="thead-dark" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemoConnectionString %>" SelectCommand="SELECT * FROM [booking]"></asp:SqlDataSource>
-        </div>
+            <asp:Button ID="BtnUpdate" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="BtnUpdate_Click" />
 
+        </div>
     </div>
 
 
