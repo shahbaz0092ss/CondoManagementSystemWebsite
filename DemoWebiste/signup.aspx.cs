@@ -113,7 +113,7 @@ public partial class signup : System.Web.UI.Page
                     client.Host = "smtp.gmail.com";
                     client.Port = 587;
                     client.EnableSsl = true;
-                    client.Credentials = new System.Net.NetworkCredential("shahbaz.0092.ss@gmail.com", "Shah@0092ss");
+                    client.Credentials = new System.Net.NetworkCredential("shahbaz.0092.ss@gmail.com", "1234@1234");
 
                     try
                     {

@@ -47,15 +47,16 @@
 </div>
 
             <div class="container mt-5 mb-5">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#eae5e5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="#EAE5E5" BorderColor="White" BorderStyle="None" CssClass="table table-hover" Width="100%">
         <Columns>
             <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
             <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
             <asp:BoundField DataField="maintenanceDetail" HeaderText="maintenanceDetail" SortExpression="maintenanceDetail" />
+            <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
         </Columns>
          <HeaderStyle  CssClass="thead-dark" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemoConnectionString %>" SelectCommand="SELECT [category], [date], [maintenanceDetail] FROM [Maintenance] WHERE ([username] = @username)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemoConnectionString %>" SelectCommand="SELECT [category], [date], [maintenanceDetail], [status] FROM [Maintenance] WHERE ([username] = @username)">
         <SelectParameters>
             <asp:SessionParameter Name="username" SessionField="username" Type="String" />
         </SelectParameters>
